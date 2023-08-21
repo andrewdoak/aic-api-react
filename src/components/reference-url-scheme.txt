@@ -1,0 +1,10 @@
+?fields=id,image_id,title,artist_display,dimensions,medium_display,date_display,main_reference_number
+
+https://api.artic.edu/api/v1/artworks
+?fields=title,api_link,thumbnail,thumbnail.alt_text
+/search?q=cat
+?page=1&limit=2
+
+&query[term][is_public_domain]=true
+
+?fields=artist_title,artist_display,date_display,medium_display,image_id,
