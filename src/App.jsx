@@ -27,7 +27,7 @@ const App = () => {
           type="text"
           value={searchTerm}
           onChange={handleSearch}
-          placeholder="Search artworks"
+          placeholder="Search"
         />
       </div>
       <div className="art-card-container">

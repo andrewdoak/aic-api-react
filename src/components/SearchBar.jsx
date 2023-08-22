@@ -1,11 +1,8 @@
-// import React, { useState } from 'react';  
-import { searchArtworks } from '../services/aic-search'; 
-import PropTypes from 'prop-types';
-
-// Validating React component props:
-// https://www.youtube.com/watch?v=SKqFMYOSy4g 
+/* eslint-disable react/prop-types */
+import { useState } from 'react';  
+import { searchArtworks } from './services/artic-search';  
   
-const SearchBar = ({ onSearch  = []  }) => {  
+const SearchBar = ({ onSearch }) => {  
   const [searchTerm, setSearchTerm] = useState('');  
   
   const handleSubmit = async (event) => {  
@@ -21,14 +18,7 @@ const SearchBar = ({ onSearch  = []  }) => {
       <input type="text" value={searchTerm} onChange={(e) => setSearchTerm(e.target.value)} />  
       <button type="submit">Search</button>  
     </form>  
-  ); 
-   
+  );  
 };  
   
-// PropTypes Error: Installed npm prop-types
-// Defined PropTypes as Strings per:
-// https://www.freecodecamp.org/news/how-to-use-proptypes-in-react/
-SearchBar.propTypes = {
-    onSearch: PropTypes.string,
-  }
-export default SearchBar; 
+export default SearchBar;
