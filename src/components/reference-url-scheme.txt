@@ -3,7 +3,7 @@
 https://api.artic.edu/api/v1/artworks
 ?fields=title,api_link,thumbnail,thumbnail.alt_text
 /search?q=cat
-?page=1&limit=2
+?page=1&limit=10
 
 &query[term][is_public_domain]=true
 

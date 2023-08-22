@@ -1,43 +1,43 @@
 import { useState, useEffect } from "react";
-import fetchArtworks from "./services/artic-search";
-import ArtCard from "./components/ArtCard";
-import './App.css'
+import axios from "axios";
 
-const App = () => {
-  const [searchTerm, setSearchTerm] = useState("");
-  const [artworks, setArtworks] = useState([]);
+export default function App() {
+  const [data, setData] = useState([]);
 
   useEffect(() => {
-    const searchArtworks = async () => {
-      const results = await fetchArtworks(searchTerm);
-      setArtworks(results);
-    };
+    const API_BASE_URL = "https://api.artic.edu/api/v1/artworks";
+    const searchTerm = "cats";
 
-    searchArtworks();
-  }, [searchTerm]);
+    // `https://api.github.com/users`
+    axios
+      .get(`https://api.artic.edu/api/v1/artworks?page=1&limit=10`)
+      .then((response) => setData(response.data.data));
+  }, []);
 
-  const handleSearch = (e) => {
-    setSearchTerm(e.target.value);
-  };
-
-  return (
-    <div className="app">
-      <div className="search-bar">
-        <input
-          type="text"
-          value={searchTerm}
-          onChange={handleSearch}
-          placeholder="Search"
-        />
+  if (data) {
+    return (
+      <div>
+        <h1>Art Cards</h1>
+        <div className="card-container">
+          {data.map((artwork) => {
+            return (
+              <div className="cards" key={artwork.id}>
+                <h5>{artwork.title}</h5>
+              </div>
+            );
+          })}
+        </div>
       </div>
-      <div className="art-card-container">
-        {artworks.map((artwork) => (
-          <ArtCard key={artwork.id} artwork={artwork} />
-        ))}
-      </div>
-    </div>
-  );
-  
-};
+    );
+  } else {
+    return <div>Loading...</div>;
+  }
+}
 
-export default App;
+/* 
+<img src={imageUrl} alt={artwork.title} className="art-image" />
+{artwork.artist_name}
+{artwork.year_created}
+{artwork.medium}
+{artwork.description_text}
+*/
