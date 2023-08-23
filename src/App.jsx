@@ -5,14 +5,14 @@ export default function App() {
   const [data, setData] = useState([]);
 
   useEffect(() => {
-    const API_BASE_URL = "https://api.artic.edu/api/v1/artworks";
-    const searchTerm = "cats";
+    // const API_BASE_URL = "https://api.artic.edu/api/v1/artworks";
+    // const searchTerm = "cats";
 
     // `https://api.github.com/users`
     axios
       .get(`https://api.artic.edu/api/v1/artworks?page=1&limit=10`)
       .then((response) => setData(response.data.data));
-  }, []);
+  }, []); // Dependency Array is VERY important, for data to load ONCE.
 
   if (data) {
     return (
@@ -27,6 +27,8 @@ export default function App() {
             );
           })}
         </div>
+        {/* When clicked, useState is set to empty array */}
+        <button onClick={() => setData([])}>Reset</button>
       </div>
     );
   } else {
