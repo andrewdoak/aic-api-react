@@ -42,7 +42,7 @@ export default function App() {
           />
         </div>
         
-        <h3>Art Cards</h3>  
+        <h3>From the Collection</h3>  
         
         <div className="card-container">  
           {data.map((artwork) => {  
