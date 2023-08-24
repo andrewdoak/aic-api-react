@@ -21,15 +21,15 @@ export default function Search ({searchTerm, artSearch, setData}) {
             <input
               type="text"
               className="search"
-              placeholder="Search for Art"
+              placeholder="Search the Art Institute"
               onChange={handleChange}
               value={searchTerm}
               name="searchTerm"
              
             />
             {/* RESET SEARCH RESULTS */}
-            {/* SETS DATA TO EMPTY ARRAY */}
-            <input type="submit" value="Reset" onClick={() => setData([])} />
+            {/* SETS DATA TO EMPTY ARRAY, thanks Eve Porcello */}
+            <input type="submit" value="Clear Art" onClick={() => setData([])} />
           </form>
           
       );
