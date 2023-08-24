@@ -1,11 +1,5 @@
-/* eslint-disable no-unused-vars */
 /* eslint-disable react/prop-types */
-import React from "react"; 
-import { useState, useEffect } from "react"; 
-
-  
-export default function ArtCard({artwork}) {  
-  const [ArtCard, setArtCard] = useState([]);
+ export default function ArtCard({artwork}) {  
   
   // AIC Image API Base URL
   // https://api.artic.edu/docs/#iiif-image-api
@@ -14,9 +8,12 @@ export default function ArtCard({artwork}) {
   // So appending the image ID key onto the base URL 
   // Will load AIC's page for that object
   const AICurl = "https://www.artic.edu/artworks/"
+  
+  
   return (  
     <>
       <div className="art-card">  
+        {/* IMAGE LINKS TO AIC OBJECT DETAIL PAGE */}
         <a target="_blank" rel="noreferrer" href={`${AICurl}${artwork.id}`}>
           <img 
             className="art-card-img"
@@ -33,15 +30,3 @@ export default function ArtCard({artwork}) {
     </> 
   );  
 }  
-
-// {/* <img src={`${IIIFurl}${artwork.image_id}/full/843,/0/default.jpg`} alt={artwork.title} className="art-card-img" />  */}
-// <p>{artwork.year_created}</p>
-// <p>{artwork.artist_name}</p>  
-// <p></p>  
-// <p>{artwork.medium}</p>  
-// <p>{artwork.description_text}</p>
-/* 
-{data.map((artwork) => (  
-            <ArtCard key={artwork.id} artwork={artwork} />  
-          ))}
-*/

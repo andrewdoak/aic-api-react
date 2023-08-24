@@ -15,25 +15,25 @@ export default function App() {
   
   
   useEffect(() => {  
-    // URL Scheme variables: use in THIS ORDER  
+    // DO NOT CHANGE THE ORDER OF THE URL SCHEME. REQUEST WILL FAIL.
     const API_BASE_URL = "https://api.artic.edu/api/v1/artworks";  
     const searchPrefix = "/search?q=";  
     // const searchTerm = "miro"; // Temp usage, comment out with search form  
-    const paginate = "?page=1"; // 1 shows the first page of results  
-    const limitResults = "&limit=10"; // 10 results in the search 
-    const fields = "&fields=id,title,artist_title,artist_display,date_display,medium_display,image_id" 
-    // ${paginate}${limitResults}
+    // The stumper on fields was the "&". Solved by looking at "query" and "limit" params
+    const fields = 
+    "&fields=id,title,artist_title,artist_display,date_display,medium_display,image_id,next_url" 
+    // const paginate = "?page=1"; // 1 shows the first page of results  
+    const limit = "&limit=10"; // 10 results in the search 
+    
     axios  
-      .get(`${API_BASE_URL}${searchPrefix}${searchTerm}${fields}`)  
+      .get(`${API_BASE_URL}${searchPrefix}${searchTerm}${fields}${limit}`)  
       .then((response) => setData(response.data.data));  
   }, [searchTerm]);  
 
-  // https://api.artic.edu/api/v1/artworks/search?params=%7B%22q%22%3A%22cats%22%2C%22query%22%3A%7B%22term%22%3A%7B%22is_public_domain%22%3Atrue%7D%7D%7D
   
   if (data) {  
     return (  
       <div className="app-container">  
-        {/* <pre>{JSON.stringify(data, null, 2)}</pre> */}
         <div className="search-bar"> 
           <SearchBar 
             artSearch={setSearchTerm} 
@@ -53,9 +53,7 @@ export default function App() {
               /> 
             ) 
           })}  
-        </div> 
-        {/* CLEAR SEARCH: MOVED TO SEARCHBAR COMPONENT */}
-        {/* <button onClick={() => setData([])}>Reset</button>   */}         
+        </div>          
      </div>   
     );  
   
@@ -66,13 +64,6 @@ export default function App() {
 
 {/* CLEAR SEARCH: MOVED TO SEARCHBAR COMPONENT */}
 {/* <button onClick={() => setData([])}>Reset</button>   */}
-/* 
-<img src={imageUrl} alt={artwork.title} className="art-image" />
-{artwork.artist_name}
-{artwork.year_created}
-{artwork.medium}
-{artwork.description_text}
-*/
 
 // TESTING STATE/VIEWS/AXIOS
 // `https://api.github.com/users`

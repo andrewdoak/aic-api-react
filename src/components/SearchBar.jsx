@@ -1,5 +1,4 @@
 /* eslint-disable react/prop-types */
-
 export default function Search ({searchTerm, artSearch, setData}) {
 
     // update setData as typing happens
