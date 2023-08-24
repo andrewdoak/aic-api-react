@@ -1,16 +1,24 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 
+// AIC API DOCS
+// https://api.artic.edu/docs/
+
 export default function App() {
   const [data, setData] = useState([]);
 
   useEffect(() => {
-    // const API_BASE_URL = "https://api.artic.edu/api/v1/artworks";
-    // const searchTerm = "cats";
+    // URL Scheme variables: use in THIS ORDER
+    const API_BASE_URL = "https://api.artic.edu/api/v1/artworks";
+    const searchPrefix = "/search?q="
+    const searchTerm = "Walker Evans"; // Temp usage, comment out with search form
+    const paginate = "?page=1" // 1 shows the first page of results
+    const limitResults = "&limit=15" // 10 results in the search
+    
 
     // `https://api.github.com/users`
     axios
-      .get(`https://api.artic.edu/api/v1/artworks?page=1&limit=10`)
+      .get(`${API_BASE_URL}${searchPrefix}${searchTerm}${paginate}${limitResults}`)
       .then((response) => setData(response.data.data));
   }, []); // Dependency Array is VERY important, for data to load ONCE.
 
