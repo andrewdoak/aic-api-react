@@ -20,15 +20,17 @@ export default function Search ({searchTerm, artSearch, setData}) {
             <input
               type="text"
               className="search"
-              placeholder="Keyword, artist, reference"
+              placeholder="Search artist, keyword, genre, style"
               onChange={handleChange}
+              // defaultValue="Impressionism"
               value={searchTerm}
               name="searchTerm"
              
             />
             {/* RESET SEARCH RESULTS */}
             {/* SETS DATA TO EMPTY ARRAY, thanks Eve Porcello */}
-            <input type="submit" value="Clear" onClick={() => setData([])} />
+            {/* REMOVED. DIDN'T HELP UX/FUNCTIONALITY */}
+            {/* <input type="submit" value="Clear" onClick={() => setData([])} /> */}
           </form>
           
       );

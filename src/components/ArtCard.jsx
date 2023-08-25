@@ -33,15 +33,20 @@ export default function ArtCard({artwork}) {
             alt={artwork.title}  
           />
         </a>
-        {/* TITLE, LINKS TO AIC PAGE */}
+        {/* TITLE, DATE: LINKS TO AIC PAGE */}
         <a target="_blank" rel="noreferrer" href={`${aic_URL}${artwork.id}`}>
           <h4>{artwork.title}</h4>
         </a>
         {/* ARTIST */}
-        <p>{artwork.artist_title}</p>
-        {/* DATE AND MEDIUM */}
-        <p>{`${artwork.date_display}, ${artwork.medium_display}`}</p>
+        <p>{`${artwork.artist_title} ${artwork.date_display}`}</p>
       </div> 
     </> 
   );  
 }  
+
+// TEMPLATE LITERAL PLAYGROUND
+// {`${artwork.objKEY}, ${artwork.objKEY}`}
+
+// USER TESTING PROMPTED UI UPDATE
+// REMOVED MEDIUM DISPLAY, SOME OLDER CHINESE WORKS GOT WAY LONG
+// artwork.medium_display

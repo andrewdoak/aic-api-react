@@ -1,42 +1,128 @@
+ /* TOPAZ: Similar or Identical to AIC Serif Typeface "Topaz" */
+ @import url('https://fonts.cdnfonts.com/css/topaz');
+ /* LATO: Similar to AIC Sans Serif Typeface "Ideal Sans" */
+ @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,900;1,300;1,400;1,900&display=swap');
+
+ 
 #root {
   max-width: 1280px;
   margin: 0 auto;
   padding: 2rem;
+  text-align: left;
+}
+
+/* LAYOUT */
+.card-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+    align-items: flex-start;
+    gap: 4%;
+    border-top: .25px solid #d6003540;
+    padding-top: 3rem;
+    /* FOR TESTING LAYOUT */
+    /* background-color: #fecc15; */
+    /* border: 1px solid black;    */
+}
+
+/* GLOBAL CSS */
+h1, h2, h3, h4, h5, h6 {  
+  font-family: 'Topaz', sans-serif;  
+  font-weight: 400; 
+  /* color: black;  */
+}  
+
+h3 {  
+  font-size: 1.5rem;
+  color: #d60036;
+  line-height: 1;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  margin-top: 0.75rem;
+  margin-bottom: 0;
+}  
+
+/* SEARCH BAR CSS */
+input[type="text"] {
+  width: 17em;
+  appearance: none;
+  border: 0.25px solid rgba(0, 0, 0, 0.1025);
+  outline: none;
+  /* border-radius: 0.45em; */
+  padding: 0.6em;
+  box-shadow: -1px 1px 5px -2px rgba(51, 0, 16, 0.312);
+  font-family: 'Lato', sans-serif;
+  color: #767676;
+}
+
+input:target {
+  color: #000831;
   text-align: center;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+input::placeholder {
+  color:#00000065;
+  text-align: left;
+  padding-left: .05rem;
+  font-family: 'Lato', sans-serif;
+  
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* ART CARD CSS */
+.art-card {
+  flex-basis: 250px;
+  text-align: left;
+  border-top: 0.5px solid rgb(235 235 235);
+  /* border-bottom: 0.5px solid rgb(224, 224, 224); */
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+} 
+
+.art-card h4 {  
+  margin-top: 1rem;
+  margin-bottom: -0.35rem;
+  max-width: 10em;
+  line-height: 1.33;    
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+/* TODO: This is a hack. 
+Something is overriding the .artcard a:hover */
+.art-card h4:hover {  
+  color: #d60036;
+  transition-duration: 1s;   
 }
 
-.card {
-  padding: 2em;
-}
+.art-card p {  
+  font-family: 'Lato', sans-serif;  
+  font-weight: 400;
+  font-size: .85rem; 
+  color: #767676; 
+  max-width: 10em; 
+  margin-top: .5rem;
+  margin-bottom: 0.5rem;  
+}  
 
-.read-the-docs {
-  color: #888;
+.art-card a img {    
+  opacity: 1;
+  transition: opacity .75s ease-in-out;  
+}  
+
+.art-card a img:hover {  
+  opacity: .5;  
+} 
+
+.art-card img {   
+  box-shadow: -1px 1px 5px -2px rgba(0, 0, 51, 0.6); 
+} 
+
+.art-card a {  
+  color: rgba(15, 15, 15);
+  font-size: 1.35rem;    
+}  
+
+.art-card a:hover {  
+  color: #d60036;
+  transition-duration: 1s;   
 }
