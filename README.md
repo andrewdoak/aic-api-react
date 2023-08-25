@@ -25,7 +25,7 @@ The design mimics Art Institute of Chicago's own search results page, with a few
 ### Type  
 Typefaces include Topaz (serif text) and Lato (serif text). The Art Institute uses Topaz for serif text and Ideal Sans for sans-serif text.
 
-## Roadmap
+<!-- ## Roadmap
 + One.
 + Two.
 + Three.
@@ -39,10 +39,10 @@ Typefaces include Topaz (serif text) and Lato (serif text). The Art Institute us
 + Three.
 + Four.
 + Five.
-+ More to be added...
++ More to be added... -->
 
-<!-- ## Contribute
-Would love to have any and all ideas from people. -->
+## Contribute
+For when we're looking at this live, by telling me what to search for!
 
 ## Credits
 This app would not have been possible without the amazing help from all of the below.
