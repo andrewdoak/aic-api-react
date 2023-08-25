@@ -24,10 +24,11 @@ export default function App() {
     const fields = 
     "&fields=id,title,artist_title,artist_display,date_display,medium_display,image_id,next_url" 
     // const paginate = "?page=1"; // 1 shows the first page of results  
+    const publicDomain = "&query[term][is_public_domain]=true"
     const limit = "&limit=20"; // 10 results in the search 
     
     axios  
-      .get(`${API_BASE_URL}${searchPrefix}${searchTerm}${fields}${limit}`)  
+      .get(`${API_BASE_URL}${searchPrefix}${searchTerm}${fields}${publicDomain}${limit}`)  
       .then((response) => setData(response.data.data));  
   }, [searchTerm]);  
 
