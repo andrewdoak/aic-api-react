@@ -25,7 +25,7 @@ export default function ArtCard({artwork}) {
       <div className="art-card">  
         {/* IMAGE (DEFAULT SIZE) LINKS TO AIC PAGE */}
         <a target="_blank" rel="noreferrer" href={`${aic_URL}${artwork.id}`}>
-          {/*  */}
+          {/* TODO: FIGURE OUT DIV WRAP SO THAT BLUR IS INSIDE A HARD DROP SHADOW */}
           <img 
             className="art-card-img"
             src={`${iiif_URL}${artwork.image_id}${iiif_SIZE_reg}`} 
