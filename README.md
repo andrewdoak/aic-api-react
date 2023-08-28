@@ -19,9 +19,11 @@ This app is built using [React](https://react.dev/), JSX, and CSS. It is scaffol
 
 ### Favorite Block of Code
 ![Favorite Block of Code](src/assets/favorite-code.png)
-The Art Institute's API is deep and extensive. That is both a blessing and a curse. It became the best and the most challenging aspect of building the app. While their documentation is extensive, not everything is spelled out explicitly. In particular, the URL scheme has many options for the [parameters](https://api.artic.edu/docs/#endpoints) one can feed it. When using the "search" param, the only data that I could use in the view was the artwork title (even though there are literally hundreds of objects available in the JSON), so I needed "fields". The moment I'm most proud of in navigating these parameters literally hinges on a single character: "&" in the "fields" portion of the URL scheme, which let (almost) everything fall into place. Adding this made the majority of my views possible by returning the data I wanted/needed from the API. I'm still working on figuring out returning the correct [pagination](https://api.artic.edu/docs/#pagination) object/link from the API. Would also like to implement [authentication](https://api.artic.edu/docs/#authentication).
+The Art Institute's API is deep and extensive. That is both a blessing and a curse. It became the best and the most challenging aspect of building the app. While their documentation is extensive, not everything is spelled out explicitly. In particular, the URL scheme has many options for the [parameters](https://api.artic.edu/docs/#endpoints) one can feed it. When using the "search" parameter, the only data that I could use in the view was the artwork title (even though there are literally hundreds of objects available in the JSON), so I needed "fields". The moment I'm most proud of in navigating these parameters literally hinges on a single character: "&" in the "fields" portion of the URL scheme, which returned the data I needed. I'm still working on returning [pagination](https://api.artic.edu/docs/#pagination) data from the API. I would also like to implement [authentication](https://api.artic.edu/docs/#authentication).
+
 ## Design
 The design mimics Art Institute of Chicago's own search results page, with a few exceptions that are my own preferences. The goal is a minimal, clean, beautiful display of the search results and visual cues that point to functionality (link animations and color changes, for example). 
+
 ### Type  
 Typefaces include Topaz (serif text) and Lato (serif text). The Art Institute uses Topaz for serif text and Ideal Sans for sans-serif text.
 
@@ -49,7 +51,7 @@ This app would not have been possible without the amazing help from all of the b
 #### Per Scholas
 Thank you to [Per Scholas](https://perscholas.org/) for living out its [mission](https://perscholas.org/about-per-scholas/) and providing the tuition-free tech training that has enabled me in so many ways.
 
-Big thanks to Kat[Kat Saung](https://github.com/KatySaung/), my classmate, for helping without knowing she did. Some of the searches I tried based off of an informal discussion led to several UX and back end improvements. And thank you to my cohort at large. Discord people: "you know what it is!"
+Big thanks to [Katherine Saung](https://github.com/KatySaung/), my classmate, for helping without knowing she did. Some of the searches I tried based off of an informal discussion led to several UX and back end improvements. And thank you to my cohort at large. Discord people: "you know what it is!"
 #### LinkedIn Learning & Chicago Public Library
 I used the [LinkedIn Learning](https://www.linkedin.com/learning/?u=116852650) platform and [Chicago Public Library's](https://www.chipublib.org) subscription to the service for research, reinforcement of React concepts, and to learn new things in building this app. I'll continue to do so as I further it. 
 
